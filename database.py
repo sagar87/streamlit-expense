@@ -7,6 +7,8 @@ DETA_KEY = os.getenv("DETA_KEY")
 
 deta = Deta(DETA_KEY)
 db = deta.Base("monthly_reports")
+drive = deta.Drive("monthly_drive")
+
 
 def insert_period(period, incomes, expenses, comment):
     return db.put({"key": period, "incomes": incomes, "expenses": expenses, "comment": comment})
@@ -16,3 +18,4 @@ def fetch_all_periods():
 
 def get_period(period):
     return db.get(period)
+

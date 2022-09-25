@@ -27,7 +27,8 @@ def get_all_periods():
     periods = [item["key"] for item in items]
     return periods
     
-
+large_file = db.drive.get('logo.png')
+st.image(large_file.read(), width=200)
 
 selected = option_menu(
     menu_title=None,
